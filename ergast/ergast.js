@@ -10,6 +10,7 @@ function formInfo(){
 
 async function doAPICall(year, round){
     let tbody = document.getElementsByTagName('tbody')[0]
+    removeOldRows(tbody)
     console.log('api call')
     let search = await axios.get(`http://ergast.com/api/f1/${year}/${round}/driverStandings.json`)
     console.log(search)
@@ -69,3 +70,9 @@ async function doAPICall(year, round){
     }
     }
 } 
+
+function removeOldRows(parent){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+}
