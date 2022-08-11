@@ -1,6 +1,6 @@
 
 
-function editCart(action, item, cart){
+function editCart(action, cart, item = {}){
 
     switch(action){
         case "add_to_cart":
@@ -38,7 +38,7 @@ const removeAllFunc=(item, cart)=>{
 
 myCart = [{id:1},{id:1},{id:2},{id:2},{id:3},{id:4}]
 
-console.log(editCart('add_to_cart', {id:5}, myCart))
-console.log(editCart('remove_from_cart', {id:1}, myCart))
-console.log(editCart('remove_all_from_cart', {id:2}, myCart))
-console.log(editCart('empty_cart', {id:5}, myCart))
+console.log(editCart('add_to_cart', myCart, {id:5}))
+console.log(editCart('remove_from_cart', myCart, {id:1}))
+console.log(editCart('remove_all_from_cart', myCart, {id:2}))
+console.log(editCart('empty_cart', myCart))
